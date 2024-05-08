@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fbf1c7;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+}
+
+.navbar {
+		width: 100%; /* Make the navbar extend full width of the viewport */
+		max-width: 5000px;
+		background-color: #bdae93; /* Background color of the navbar */
+		padding: 10px 0; /* Padding around the links */
+		text-align: center; /* Centers the text links */
+		position: fixed; /* Fixed positioning to keep it at the top */
+		top: 0; /* Position the navbar at the very top of the viewport */
+		left: 50%; /* Align the navbar to the left edge of the viewport */
+		transform: translateX(-50%); /* Precise centering */
+		z-index: 1000; /* Ensures the navbar stays on top of other content */
+		box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Optional: Adds shadow for better visibility over content */
+}
+
+.navbar a {
+    color: #3c3836;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.container {
+	text-align: center;
+	width: 80%;
+	max-width: 300px;
+}
+
+.profile-pic {
+    height: 200px;
+		width: 200px;
+		margin: auto;
+		border-radius: 50%;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #333; /* Icon color */
+    font-size: 24px; /* Icon size */
+}
+
+.social-links a:hover {
+    color: #0077cc; /* Color changes when hovering over the icon */
+}
+
+.about-me {
+	max-width: 500px;
+	word-wrap: break-word;
+}
+
+header, section, footer {
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+a {
+    color: #0077cc;
+}
+
+
