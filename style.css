@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  zoom: 1.2;
+}
+
 body {
   font-family: 'Source Sans 3', 'Roboto', Arial, sans-serif;
   font-size: 18px;
@@ -30,7 +34,7 @@ a {
    SIDEBAR
    ============================================================ */
 .sidenav {
-  width: 190px;
+  width: 220px;
   background: #fafafa;
   border-right: 1px solid #ddd;
   overflow-y: auto;
@@ -69,8 +73,8 @@ a {
 }
 
 .profile-pic {
-  width: 72px;
-  height: 72px;
+  width: 90px;
+  height: 90px;
   border: 5px solid rgba(0, 4, 77, 0.35);
   border-radius: 50%;
   display: block !important;
@@ -80,7 +84,7 @@ a {
 
 .sidenav li.logo span {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   font-family: 'Outfit', sans-serif;
   font-weight: 300;
   color: #444;
@@ -93,11 +97,11 @@ a {
 .sidenav li:not(.logo) > a {
   display: flex !important;
   align-items: center !important;
-  height: 44px !important;
+  height: 48px !important;
   line-height: 1 !important;
-  padding: 0 16px 0 16px !important;
+  padding: 0 18px 0 18px !important;
   color: rgb(16, 69, 202) !important;
-  font-size: 13.5px;
+  font-size: 15px;
   font-family: 'Outfit', sans-serif;
   border-left: 3px solid transparent;
   transition: background 0.18s, border-color 0.18s;
@@ -164,7 +168,7 @@ nav {
    MAIN LAYOUT
    ============================================================ */
 main {
-  padding-left: 190px;
+  padding-left: 220px;
   background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
   background-size: 22px 22px;
   background-color: #fff;
@@ -243,7 +247,7 @@ h3 {
 
 .hero-container h1 {
   font-family: 'Outfit', sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 200;
   color: #fff;
   margin: 0 0 16px;
@@ -251,7 +255,7 @@ h3 {
 }
 
 .intro-para {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
