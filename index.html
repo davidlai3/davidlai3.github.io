@@ -1,43 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Lai's Personal Website</title>
-    <link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Lai</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<nav class="navbar">
-			<a href="index.html">Home</a>
-			<a href="projects.html">Projects</a>
-			<a href="problems.html">Puzzles</a>
-	</nav>
 
-	<div class="container">
-			<img src="images/cover.jpeg" alt="David Lai" class="profile-pic">
-			<h1>David Lai</h1>
-			<div class="social-links">
-					<a href="https://www.linkedin.com/in/davidrlai" target="_blank" title="LinkedIn">
-						<i class="fab fa-linkedin"></i>
-					</a>
-					<a href="https://github.com/davidlai3" target="_blank" title="GitHub">
-						<i class="fab fa-github"></i>
-					</a>
-					<a href="images/David Lai's Resume.pdf" target="_blank" title="Resume">
-						<i class="fas fa-file"></i>
-					</a>
-			</div>
-	</div>
-			<div class="about-me">
-					<h2>About Me</h2>
-			<p>
-				Hello! I am currently a freshman at Stony Brook University, double majoring in computer science and applied mathematics. I love problem solving, playing guitar, and coding in C/C++.
-			</p>
-			<p>
-				Currently listening to: <a href="https://www.youtube.com/watch?v=djV11Xbc914" target="_blank">Take On Me</a> by a-ha
-			</p>
-	</div>
+  <!-- Mobile top bar -->
+  <nav class="top-nav hide-on-large-only">
+    <div class="nav-wrapper">
+      <a href="#" data-target="slide-out" class="sidenav-trigger">
+        <i class="fas fa-bars"></i>
+      </a>
+      <span class="nav-title">David Lai</span>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li class="logo">
+      <a href="#intro" class="logo-link" style="display:flex!important;flex-direction:column!important;align-items:center!important;height:auto!important;line-height:normal!important;padding:0!important;border:none!important;background:transparent!important;text-decoration:none!important;">
+        <img src="images/cover.jpeg" alt="David Lai" class="profile-pic">
+        <span>David Lai</span>
+      </a>
+    </li>
+    <li><a href="#experience" class="waves-effect waves-dark sidenav-close"><i class="fas fa-briefcase"></i>Experience</a></li>
+    <li><a href="#projects" class="waves-effect waves-dark sidenav-close"><i class="fas fa-code"></i>Projects</a></li>
+    <li><a href="#education" class="waves-effect waves-dark sidenav-close"><i class="fas fa-graduation-cap"></i>Education</a></li>
+    <li><a href="#extras" class="waves-effect waves-dark sidenav-close"><i class="fas fa-trophy"></i>Extracurriculars</a></li>
+    <li><a href="#skills" class="waves-effect waves-dark sidenav-close"><i class="fas fa-wrench"></i>Skills</a></li>
+    <li><a href="#blog" class="waves-effect waves-dark sidenav-close"><i class="fas fa-pen-nib"></i>Blog</a></li>
+    <li><a href="#contact" class="waves-effect waves-dark sidenav-close"><i class="fas fa-envelope"></i>Contact</a></li>
+  </ul>
+
+  <main>
+
+    <!-- ===== INTRO ===== -->
+    <section id="intro" class="section full-height">
+      <div class="overlay"></div>
+      <div class="container hero-container">
+        <h1>Hi, I'm David Lai</h1>
+        <p class="intro-para">
+          I&#8217;m a junior at Stony Brook University double majoring in Computer Science and Applied Mathematics.
+          I love problem solving &mdash; whether it&#8217;s competitive programming, solving puzzles, or building
+          systems from scratch. I&#8217;m particularly interested in algorithms, quantitative finance, and
+          high-performance computing. Outside of school, you&#8217;ll find me rock climbing, going on runs,
+          or grinding LeetCode at unreasonable hours.
+        </p>
+        <div class="hero-btns">
+          <a href="David Lai Resume.pdf" target="_blank" class="readme waves-effect">Resume</a>
+          <a href="#experience" class="contactme waves-effect">View My Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section scrollspy">
+      <div class="container">
+        <h3><span class="title-underline">Experience</span></h3>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="row exp-row valign-wrapper">
+              <div class="col s12 m2 center-align">
+                <div class="org-badge">IMC</div>
+              </div>
+              <div class="col s12 m10">
+                <span class="card-title">Software Engineering Intern</span>
+                <span class="role-tag">Incoming &rsquo;26</span>
+                <p class="org-name">IMC Trading &mdash; Chicago, IL</p>
+                <p class="date-str">June 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="row exp-row">
+              <div class="col s12 m2 center-align">
+                <div class="org-badge sbu-badge">SBU</div>
+              </div>
+              <div class="col s12 m10">
+                <span class="card-title">Undergraduate Researcher</span>
+                <p class="org-name">Stony Brook University &mdash; Neural Flocking Lab &mdash; Stony Brook, NY</p>
+                <p class="date-str">June 2025 &ndash; August 2025</p>
+                <ul>
+                  <li>Researched real-time multi-agent drone control using deep neural networks trained via supervised learning from a high-performance centralized MPC system.</li>
+                  <li>Developed both centralized and fully distributed controllers for flocking formation, obstacle and predator avoidance, and target seeking.</li>
+                  <li>Trained a deep neural network to replicate MPC behavior with 99% success across 396,000 simulations, reducing per-step decision time from 1.2s to under 2ms.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="row exp-row">
+              <div class="col s12 m2 center-align">
+                <div class="org-badge jsc-badge">JSC</div>
+              </div>
+              <div class="col s12 m10">
+                <span class="card-title">AMP Intern</span>
+                <p class="org-name">Jane Street Capital &mdash; New York, NY</p>
+                <p class="date-str">July 2023 &ndash; August 2023</p>
+                <ul>
+                  <li>Selected as one of 60 for fully subsidized program at Jane Street&#8217;s Academy of Math and Programming.</li>
+                  <li>Placed 1st in Jane Street&#8217;s internal electronic trading competition &mdash; engineered a trading algorithm using autoregressive moving averages that garnered $50k/hour in a simulated exchange.</li>
+                  <li>Received mentorship from past IMO medalists, building strong foundations in combinatorics and graph theory.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section scrollspy">
+      <div class="container">
+        <h3><span class="title-underline">Projects</span></h3>
+        <div class="row">
+
+          <div class="col s12 m6 l6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">Trading Engine</span>
+                <p class="tech-line">C++ &middot; Concurrency &middot; Sockets</p>
+                <ul>
+                  <li>Real-time limit order book matching engine with price-time priority, limit/market orders, and order management.</li>
+                  <li>Concurrent client connections via async TCP sockets and thread-safe queuing.</li>
+                </ul>
+              </div>
+              <div class="card-action">
+                <a href="https://github.com/davidlai3" target="_blank" class="hoverline">
+                  GitHub <i class="fab fa-github"></i>
+                </a>
+                <span>May 2025 &ndash; Present</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">ToyRedis</span>
+                <p class="tech-line">C++ &middot; Networking &middot; Data Structures</p>
+                <ul>
+                  <li>Building a Redis clone from scratch in C++, implementing core commands (GET, SET, DEL, EXISTS, EXPIRE) with an event-driven server.</li>
+                  <li>Supports persistent TCP connections, serialization via the RESP protocol, and an in-memory key-value store.</li>
+                </ul>
+              </div>
+              <div class="card-action">
+                <a href="https://github.com/davidlai3/ToyRedis" target="_blank" class="hoverline">
+                  GitHub <i class="fab fa-github"></i>
+                </a>
+                <span>In Progress</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">Wordle AI</span>
+                <p class="tech-line">Python &middot; SciPy &middot; Git</p>
+                <ul>
+                  <li>Rule-based AI using Shannon entropy and SciPy, achieving an average of 3.5 guesses per game vs. the human average of 4.5.</li>
+                </ul>
+              </div>
+              <div class="card-action">
+                <a href="https://github.com/davidlai3" target="_blank" class="hoverline">
+                  GitHub <i class="fab fa-github"></i>
+                </a>
+                <span>July &ndash; August 2023</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section scrollspy">
+      <div class="container">
+        <h3><span class="title-underline">Education</span></h3>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="row exp-row">
+              <div class="col s12 m2 center-align">
+                <div class="org-badge edu-badge">SBU</div>
+              </div>
+              <div class="col s12 m10">
+                <span class="card-title">Stony Brook University</span>
+                <p class="org-name">B.S. Computer Science &amp; B.S. Applied Mathematics &mdash; Expected May 2027</p>
+                <p class="date-str">GPA: 4.0 / 4.0</p>
+
+                <h6>Relevant Coursework</h6>
+                <ul class="two-col">
+                  <li>Data Structures and Algorithms</li>
+                  <li>Web Development</li>
+                  <li>Operating Systems</li>
+                  <li>Networks</li>
+                  <li>Cloud Computing</li>
+                  <li>Compiler Design</li>
+                </ul>
+
+                <h6>Activities</h6>
+                <ul class="two-col">
+                  <li>Quant Club &mdash; Vice President</li>
+                  <li>Competitive Programming Club</li>
+                  <li>Computing Society at Stony Brook</li>
+                  <li>Math Club</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== EXTRACURRICULARS ===== -->
+    <section id="extras" class="section scrollspy">
+      <div class="container">
+        <h3><span class="title-underline">Extracurriculars</span></h3>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">ICPC Competitive Programmer</span>
+            <p class="org-name">ACM International Collegiate Programming Contest &mdash; Stony Brook University</p>
+            <p class="date-str">November 2025</p>
+            <ul>
+              <li>Selected to represent Stony Brook University at the ACM ICPC.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Google G-SWEP Fellow</span>
+            <p class="org-name">Google</p>
+            <p class="date-str">July 2025</p>
+            <ul>
+              <li>Selected as one of 105 fellows for a rigorous 10-week program centered around system design and problem solving.</li>
+              <li>Received 1:1 technical mentorship from a Google SWE, learning industry best practices and standards.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Teaching Assistant &mdash; Systems Fundamentals</span>
+            <p class="org-name">Stony Brook University &mdash; CSE320: Systems Fundamentals II</p>
+            <p class="date-str">January 2025</p>
+            <ul>
+              <li>Held weekly office hours and graded assignments for 150+ students.</li>
+              <li>Wrote test cases for the course&#8217;s autograder in C.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section scrollspy">
+      <div class="container">
+        <h3><span class="title-underline">Skills</span></h3>
+        <div class="card">
+          <div class="card-content">
+
+            <h5>Languages</h5>
+            <div class="chip-row">
+              <span class="skill-chip">C</span>
+              <span class="skill-chip">C++</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">OCaml</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">HTML / CSS</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">MATLAB</span>
+              <span class="skill-chip">x86-64 Assembly</span>
+            </div>
+
+            <h5>Frameworks</h5>
+            <div class="chip-row">
+              <span class="skill-chip">React</span>
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">Next.js</span>
+              <span class="skill-chip">Flask</span>
+            </div>
+
+            <h5>Developer Tools</h5>
+            <div class="chip-row">
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">Linux</span>
+              <span class="skill-chip">AWS</span>
+              <span class="skill-chip">Kubernetes</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">PostgreSQL</span>
+              <span class="skill-chip">MongoDB</span>
+            </div>
+
+            <h5>Libraries</h5>
+            <div class="chip-row">
+              <span class="skill-chip">pandas</span>
+              <span class="skill-chip">NumPy</span>
+              <span class="skill-chip">Matplotlib</span>
+              <span class="skill-chip">SciPy</span>
+              <span class="skill-chip">PyTorch</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section id="blog" class="section scrollspy">
+      <div class="container">
+        <h3><span class="title-underline">Blog</span></h3>
+        <div class="row">
+
+          <div class="col s12 m6 l6">
+            <div class="card blog-card">
+              <div class="card-content">
+                <span class="blog-label">Challenge Problem</span>
+                <span class="card-title">The Tennis Academy Problem</span>
+                <p>In an academy of 101 players, every group of 50 has an outsider who beat them all. Prove someone beat everyone. A graph theory proof using clique-building.</p>
+              </div>
+              <div class="card-action">
+                <a href="blog/challenge-problem.html" class="hoverline">Read More &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l6">
+            <div class="card blog-card">
+              <div class="card-content">
+                <span class="blog-label">Jane Street Puzzle</span>
+                <span class="card-title">Can U Dig It? (April 2026)</span>
+                <p>Coming Soon...</p>
+              </div>
+              <div class="card-action">
+                <a href="blog/JSApr2026.html" class="hoverline">Read More &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l6">
+            <div class="card blog-card">
+              <div class="card-content">
+                <span class="blog-label">Coming Soon</span>
+                <span class="card-title">Solving Wordle Optimally with Shannon Entropy</span>
+                <p>How information theory beats human intuition at word games by more than a full guess on average.</p>
+              </div>
+              <div class="card-action">
+                <a href="#blog" class="hoverline">Read More &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section scrollspy">
+      <div class="container">
+        <h3><span class="title-underline">Contact</span></h3>
+        <p class="contact-blurb">
+          Feel free to reach out &mdash; I&#8217;m always open to interesting conversations.
+        </p>
+        <p>
+          <a href="mailto:lairdavid11@gmail.com" class="contact-email-link">
+            <i class="fas fa-envelope"></i> lairdavid11@gmail.com
+          </a>
+        </p>
+        <div class="social-contact">
+          <a href="https://github.com/davidlai3" target="_blank" class="icon-btn github" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/davidrlai" target="_blank" class="icon-btn linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="David Lai Resume.pdf" target="_blank" class="icon-btn resume-btn" title="Resume">
+            <i class="fas fa-file-alt"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Sidenav
+      M.Sidenav.init(document.querySelectorAll('.sidenav'));
+
+      // ScrollSpy
+      M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), { scrollOffset: 50 });
+
+      // Scroll-reveal for cards
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll('.card').forEach(card => observer.observe(card));
+    });
+  </script>
 </body>
 </html>

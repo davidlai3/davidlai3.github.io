@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge Problem &mdash; David Lai</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" async></script>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .post-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+    .post-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13.5px;
+      color: rgb(16, 69, 202);
+      text-decoration: none;
+      margin-bottom: 36px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .post-back:hover { border-bottom-color: #ffab40; color: rgb(16, 69, 202); }
+    .post-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #bbb;
+      margin-bottom: 12px;
+    }
+    .post-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 200;
+      color: #1a1a1a;
+      margin: 0 0 32px;
+      line-height: 1.2;
+    }
+    .post-divider {
+      border: none;
+      border-top: 5px solid #24305e;
+      width: 48px;
+      margin: 0 0 36px;
+    }
+    .post-body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #333;
+    }
+    .post-body p { margin-bottom: 1.4em; }
+    .post-body h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin: 2em 0 0.6em;
+      color: #1a1a1a;
+    }
+    .post-body blockquote {
+      border-left: 4px solid #24305e;
+      background: #f5f7ff;
+      padding: 16px 20px;
+      margin: 0 0 1.4em;
+      border-radius: 0 4px 4px 0;
+      color: #444;
+      font-style: italic;
+    }
+    .post-body img {
+      display: block;
+      max-width: 100%;
+      margin: 28px auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <main style="padding-left:0;">
+    <div class="post-wrap">
+
+      <a href="../index.html#blog" class="post-back">
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+
+      <p class="post-label">Challenge Problem</p>
+      <h1 class="post-title">The Tennis Academy Problem</h1>
+      <hr class="post-divider">
+
+      <div class="post-body">
+
+        <blockquote>
+          <strong>Problem.</strong> In a tennis academy of 101 players, for every group of 50 players there exists
+          a player outside the group who has played against every player in the group.
+          Prove that there is a player who has played against all 100 others.
+        </blockquote>
+
+        <p>
+          We solve this using a process similar to induction, building up a clique one player at a time.
+        </p>
+
+        <p>
+          Start with two players \(A\) and \(B\). Assume \(A\) belongs to some arbitrary group of 50 players,
+          and that \(B\) is the player outside that group who has played against everyone in it &mdash;
+          so in particular, \(A\) and \(B\) have played each other.
+        </p>
+
+        <p>
+          Now consider a group of 50 players containing both \(A\) and \(B\). By the problem's condition,
+          there must be a player \(C\) outside this group who has played against every member.
+          Since \(A\) and \(B\) are already in the group, \(C\) has played both of them.
+          Combined with \(A\) and \(B\) having played each other, the three players \(A\), \(B\), \(C\)
+          have all played each other &mdash; they form a \(K_3\).
+        </p>
+
+        <p>
+          We repeat: place \(A\), \(B\), \(C\) into any group of 50 and find a new player \(D\) outside
+          it who has beaten everyone in the group. Since \(A\), \(B\), \(C\) are all in the group,
+          \(D\) has played all three, and they've all played each other, so \(\{A,B,C,D\}\) is a \(K_4\).
+        </p>
+
+        <p>
+          Continuing this process, each step adds one new player who has played against everyone in the
+          current clique, growing it by one. After 48 more steps we arrive at 51 players who have
+          all played each other: a \(K_{51}\).
+        </p>
+
+        <p>
+          Now consider the remaining 50 players in the academy (those outside the \(K_{51}\)).
+          They form a valid group of 50, so there must exist a player outside this group who has played
+          against all of them. The only players outside this group of 50 are the 51 members of our clique.
+          Therefore, at least one member of the \(K_{51}\) has played against all 50 remaining players.
+          But every member of the \(K_{51}\) has also played against all other 50 members of the clique.
+          That player has therefore played against all 100 others in the academy. \(\blacksquare\)
+        </p>
+
+        <img src="../images/tennis.png" alt="Tennis graph diagram">
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>

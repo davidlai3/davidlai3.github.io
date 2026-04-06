@@ -1,86 +1,774 @@
+/* ============================================================
+   FONTS
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Source+Sans+3:wght@300;400;500&display=swap');
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #fbf1c7;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-}
-
-.navbar {
-		width: 100%; /* Make the navbar extend full width of the viewport */
-		max-width: 5000px;
-		background-color: #bdae93; /* Background color of the navbar */
-		padding: 10px 0; /* Padding around the links */
-		text-align: center; /* Centers the text links */
-		position: fixed; /* Fixed positioning to keep it at the top */
-		top: 0; /* Position the navbar at the very top of the viewport */
-		left: 50%; /* Align the navbar to the left edge of the viewport */
-		transform: translateX(-50%); /* Precise centering */
-		z-index: 1000; /* Ensures the navbar stays on top of other content */
-		box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Optional: Adds shadow for better visibility over content */
-}
-
-.navbar a {
-    color: #3c3836;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.container {
-	text-align: center;
-	width: 80%;
-	max-width: 300px;
-}
-
-.profile-pic {
-    height: 200px;
-		width: 200px;
-		margin: auto;
-		border-radius: 50%;
-}
-
-.social-links {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.social-links a {
-    margin: 0 10px;
-    color: #333; /* Icon color */
-    font-size: 24px; /* Icon size */
-}
-
-.social-links a:hover {
-    color: #0077cc; /* Color changes when hovering over the icon */
-}
-
-.about-me {
-	max-width: 500px;
-	word-wrap: break-word;
-}
-
-header, section, footer {
-    text-align: center;
-    padding: 20px;
-}
-
-h1, h2 {
-    color: #333;
+  font-family: 'Source Sans 3', 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  background: #fff;
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 a {
-    color: #0077cc;
+  color: #001c4d;
 }
 
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+.sidenav {
+  width: 190px;
+  background: #fafafa;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
 
+/* Remove Materialize's default li padding that causes gaps */
+.sidenav li {
+  padding: 0 !important;
+}
+
+.sidenav li.logo {
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  padding: 24px 0 24px !important;
+  list-style: none;
+}
+
+/* Materialize sets height:48px and display:block on ALL sidenav li > a.
+   Override everything for the logo link. */
+.sidenav li.logo > a.logo-link,
+.sidenav li.logo > a.logo-link:hover,
+.sidenav li.logo > a.logo-link:focus {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  height: auto !important;
+  line-height: normal !important;
+  padding: 0 !important;
+  border-left: none !important;
+  background: transparent !important;
+  color: #444 !important;
+  text-decoration: none !important;
+  width: 100% !important;
+}
+
+.profile-pic {
+  width: 72px;
+  height: 72px;
+  border: 5px solid rgba(0, 4, 77, 0.35);
+  border-radius: 50%;
+  display: block !important;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.sidenav li.logo span {
+  display: block;
+  font-size: 13px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.3;
+  margin-top: 10px;
+}
+
+/* Materialize sets height:48px, display:block, line-height:48px, padding:0 32px.
+   Override all of it. */
+.sidenav li:not(.logo) > a {
+  display: flex !important;
+  align-items: center !important;
+  height: 44px !important;
+  line-height: 1 !important;
+  padding: 0 16px 0 16px !important;
+  color: rgb(16, 69, 202) !important;
+  font-size: 13.5px;
+  font-family: 'Outfit', sans-serif;
+  border-left: 3px solid transparent;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.sidenav li:not(.logo) > a:hover,
+.sidenav li:not(.logo).active > a {
+  background: #f0f0f0 !important;
+  border-left-color: #000879;
+}
+
+.sidenav li:not(.logo) > a i {
+  width: 18px;
+  margin-right: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #888;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   MOBILE TOP NAV
+   ============================================================ */
+nav {
+  background: #fff;
+  box-shadow: none;
+  height: 0;
+}
+
+.top-nav {
+  height: 64px !important;
+  background: #fff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.top-nav .nav-wrapper {
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.top-nav .sidenav-trigger {
+  color: #333;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0 14px 0 0;
+  line-height: 64px;
+}
+
+.top-nav .nav-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: #333;
+  line-height: 64px;
+}
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+main {
+  padding-left: 190px;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-color: #fff;
+}
+
+@media (max-width: 992px) {
+  main {
+    padding-left: 0;
+    padding-top: 64px;
+  }
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section {
+  padding-bottom: 10px;
+  padding-top: 0;
+  position: relative;
+}
+
+h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding: 30px 40px 20px;
+  color: #333;
+}
+
+.title-underline {
+  border-bottom: 5px solid #24305e;
+  padding-bottom: 5px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+#intro.section {
+  background: #a7cfff;
+  position: relative;
+  height: 100vh;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.42);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.hero-container {
+  color: white;
+  font-weight: 200;
+  position: absolute;
+  top: 8%;
+  left: 0;
+  padding-left: 6%;
+  text-align: left;
+}
+
+.hero-container * {
+  font-weight: 300;
+  line-height: 150%;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-container h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 200;
+  color: #fff;
+  margin: 0 0 16px;
+  letter-spacing: 1px;
+}
+
+.intro-para {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 0 32px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.readme {
+  position: relative;
+  padding: 11px 0;
+  width: 160px;
+  text-align: center;
+  background: #fff;
+  color: #000879;
+  border: 2px solid #fff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  border-radius: 5px;
+  text-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.readme:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.contactme {
+  position: relative;
+  padding: 11px 0;
+  width: 160px;
+  text-align: center;
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  border-radius: 5px;
+  text-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.contactme:hover {
+  background: #fff;
+  color: #000879;
+}
+
+.hero-social {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* ============================================================
+   ICON BUTTONS (hero social + contact)
+   ============================================================ */
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 54px;
+  border-radius: 45px;
+  display: inline-block;
+  margin: 4px;
+  text-align: center;
+  transition: transform 0.2s;
+  text-shadow: none;
+}
+
+.icon-btn:hover {
+  transform: scale(1.10);
+  color: #fff;
+}
+
+.github {
+  color: #fff;
+}
+
+.linkedin {
+  color: #fff;
+}
+
+.github:hover {
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+.linkedin:hover {
+  background-color: #0077b5;
+  color: #fff;
+}
+
+/* Contact section icon colors */
+.social-contact .github {
+  color: #1a1a1a;
+}
+
+.social-contact .linkedin {
+  color: #0077b5;
+}
+
+.resume-btn {
+  color: #000879;
+}
+
+.social-contact .icon-btn:hover {
+  color: #fff;
+}
+
+.social-contact .resume-btn:hover {
+  background-color: #000879;
+}
+
+/* ============================================================
+   CARDS — SHARED
+   ============================================================ */
+.card {
+  margin-bottom: 24px !important;
+  border-radius: 3px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09) !important;
+}
+
+.card .card-content {
+  padding: 20px 24px 30px;
+}
+
+.card .card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: #1a1a1a;
+  line-height: 2.5rem;
+  display: block;
+  overflow-y: visible;
+}
+
+/* In-card links get permanent amber underline (matching reference) */
+.card li a {
+  color: #333;
+  border-bottom: 2px solid #ffab40;
+  text-decoration: none;
+}
+
+.card li a:hover {
+  color: #333;
+  font-weight: 500;
+}
+
+.card ul {
+  margin-bottom: 0;
+}
+
+.card ul li {
+  line-height: 200%;
+  list-style-type: disc;
+  margin-left: 24px;
+}
+
+.card .card-content p {
+  padding: 4px 0 0;
+}
+
+/* Card h5 and h6 for skills / education */
+.card h5 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 16px;
+  margin-top: 28px;
+  padding-bottom: 14px;
+}
+
+.card h5:first-child {
+  margin-top: 0;
+}
+
+.card h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-top: 1.8rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: #888;
+}
+
+/* ============================================================
+   EXPERIENCE CARDS
+   ============================================================ */
+.exp-row {
+  margin-bottom: 0;
+}
+
+.org-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #000879;
+  color: #fff;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+
+.sbu-badge { background: #1a3a6b; }
+.jsc-badge { background: #0a3d62; }
+.edu-badge { background: #1a3a6b; }
+
+.org-name {
+  font-size: 1rem;
+  color: #555;
+  margin: 4px 0 2px;
+}
+
+.date-str {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 2px 0 10px;
+}
+
+.role-tag {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #fff;
+  background: #2e7d32;
+  padding: 2px 8px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  bottom: 2px;
+}
+
+/* Row separator for experience entries */
+#experience .card-content .row {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* ============================================================
+   PROJECT CARDS
+   ============================================================ */
+.card.medium .card-image {
+  height: 240px;
+  overflow: hidden;
+}
+
+.card.medium .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tech-line {
+  font-size: 0.8rem;
+  color: #aaa;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 2px 0 8px;
+}
+
+.card .card-action {
+  border-top: 1px solid rgba(0,0,0,0.07) !important;
+  padding: 12px 24px !important;
+  background: rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .card-action a {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.card .card-action span {
+  font-size: 85%;
+  color: #666;
+}
+
+/* ============================================================
+   LINK STYLES
+   ============================================================ */
+a.hoverline {
+  border-bottom: 3px solid transparent !important;
+  padding: 2px 2px 0;
+  transition: border-color 0.25s;
+  color: #333 !important;
+  text-decoration: none !important;
+}
+
+a.hoverline:hover {
+  border-bottom: 3px solid #00234d !important;
+}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.skill-chip {
+  display: inline-block;
+  padding: 4px 14px;
+  background: #eef1ff;
+  color: #000d5e;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  border: 1px solid #c5ccf0;
+  white-space: nowrap;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.two-col {
+  columns: 2;
+  -webkit-columns: 2;
+}
+
+/* ============================================================
+   BLOG
+   ============================================================ */
+.blog-card .card-content {
+  padding-bottom: 12px;
+}
+
+.blog-label {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.blog-card .card-title {
+  font-size: 1.15rem !important;
+  line-height: 1.5rem !important;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact.section {
+  padding-bottom: 72px;
+}
+
+.contact-blurb {
+  font-size: 1rem;
+  color: #666;
+  padding: 0 40px;
+  margin: 0 0 14px;
+}
+
+#contact p {
+  padding: 0 40px;
+  margin-bottom: 20px;
+}
+
+.contact-email-link {
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 2px solid #ffab40;
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+
+.contact-email-link:hover {
+  color: #000879;
+}
+
+.social-contact {
+  padding: 0 36px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   SCROLL-REVEAL ANIMATION
+   ============================================================ */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+.container {
+  width: 95%;
+}
+
+@media (min-width: 1200px) {
+  #experience .container {
+    width: 860px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1360px) {
+  .card ul li {
+    font-size: 15px;
+    line-height: 200%;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1160px) {
+  .card ul li {
+    line-height: 160%;
+  }
+}
+
+@media (max-width: 992px) {
+  h3 {
+    padding: 20px 20px;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+
+  .two-col {
+    columns: 1;
+    -webkit-columns: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  h3 {
+    font-size: 1.4rem;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+  }
+
+  .hero-container h1 {
+    font-size: 2.1rem;
+  }
+
+  .typed-line {
+    font-size: 1.1rem;
+  }
+
+  .card .card-content {
+    padding: 16px 18px 20px;
+  }
+
+  .card .card-action {
+    padding: 10px 18px !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .card .card-title {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+
+  .contact-blurb,
+  #contact p,
+  .social-contact {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
