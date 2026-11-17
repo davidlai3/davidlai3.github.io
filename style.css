@@ -468,25 +468,6 @@ h3 {
   margin-bottom: 0;
 }
 
-.org-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  background: #000879;
-  color: #fff;
-  border-radius: 8px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  margin-top: 6px;
-}
-
-.sbu-badge { background: #1a3a6b; }
-.jsc-badge { background: #0a3d62; }
-.edu-badge { background: #1a3a6b; }
 
 .org-name {
   font-size: 1rem;
@@ -775,4 +756,12 @@ a.hoverline:hover {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
+.org-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-top: 6px;
 }
